@@ -29,6 +29,9 @@ Example with the debug option specified:
 ```
 $ python3 s3_presign_upload_kms.py -d  -r us-east-1 -b mybucket -o my_object -k f85f8f32-8e65-40bd-a6fe-XXXXXXXXX -f path/to/my/local/file
 ```
-
-
+Preferred method using pipenv:
+```
+$ pipenv install
+$ pipenv run "python s3_presign_upload_kms.py -d  -r us-east-1 -b mybucket -o my_object -k f85f8f32-8e65-40bd-a6fe-XXXXXXXXX -f path/to/my/local/file"
+```
 

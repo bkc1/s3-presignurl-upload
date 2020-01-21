@@ -11,6 +11,8 @@ name = "pypi"
 
 [packages]
 
+"boto3" = "*"
+requests = "*"
 
 
 [requires]
