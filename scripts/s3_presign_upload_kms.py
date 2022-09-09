@@ -1,9 +1,10 @@
 
-import boto3
 import argparse
 import datetime
+import boto3
 from botocore.client import Config
 from requests import Request, Session
+
 
 parser = argparse.ArgumentParser(description='Generate S3 Presigned URL and upload file using SSE-KMS encyption')
 parser.add_argument('-r','--region', help='AWS region', required=True)
@@ -45,11 +46,11 @@ url = s3.generate_presigned_url(
 
 # DEBUG: Print the presigned URL if -d is set
 if args.debug: 
-  print ('This is the presigned URL: ' + str(url) )
+    print ('This is the presigned URL: ' + str(url) )
 
 # Read the local file to pass as the body in the HTTP request
 with open(PATH_TO_LOCAL_FILE, 'rb') as readFile:
-  payload = readFile.read()
+    payload = readFile.read()
 
 #=================================#
 #      MAKE THE HTTP REQUEST      #
@@ -75,4 +76,3 @@ response = s.send(prep)
 
 # Print out the HTTP response from S3
 print(response.text)
-
